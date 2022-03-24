@@ -3,6 +3,17 @@ const ytdl = require('ytdl-core');
 const { token } = require('./token.json');
 const { prefix } = require('./config.json');
 const client = new Client();
+//以上為bot基本需求
+
+//文字頻道對話
+// 當 Bot 接收到訊息時的事件
+client.on('message', (msg) => {
+	// 如果訊息的內容是 '阿里喵'
+	if (msg.content === '阿里喵') {
+		// 則 Bot 回應 '喵~'
+		msg.channel.send('喵~');
+	}
+});
 
 // 建立一個類別來管理 Property 及 Method
 class Music {
